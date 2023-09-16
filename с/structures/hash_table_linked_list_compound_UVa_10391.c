@@ -114,6 +114,8 @@ void identify_compound_words(char *words[], word_node *hash_table[],
     }
 }
 
+// https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/
+
 unsigned long oaat(char *key, unsigned long len, unsigned long bits) {
     unsigned long hash, i;
     for (hash = 0, i = 0; i < len; i++) {

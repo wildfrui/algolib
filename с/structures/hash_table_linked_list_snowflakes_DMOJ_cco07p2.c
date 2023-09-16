@@ -56,16 +56,6 @@ int main(void) {
 
     // identify_identical(buckets);
 
-    // freeing memory
-    for (int i = 0; i < SIZE; i++) {
-        node *curr = buckets[i];
-        while (curr != NULL) {
-            node *temp = curr->next;
-            free(curr);
-            curr = temp;
-        }
-    }
-
     return 0;
 }
 
