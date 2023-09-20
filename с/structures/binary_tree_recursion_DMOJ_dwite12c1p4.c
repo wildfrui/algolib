@@ -19,6 +19,7 @@ tree_node *read_tree(char *line);
 
 int main(void) {
     int i;
+    // The + 1 is for the null terminator \0 at the end of the string.
     char line[SIZE + 1];
     tree_node *tree;
     for (i = 0; i < TEST_CASES; i++) {
@@ -90,10 +91,12 @@ tree_node *read_tree_helper(char *line, int *pos) {
         (*pos)++;
         return tree;
     } else {
+        // looking at the number
         tree->left = NULL;
         tree->right = NULL;
         tree->candy = line[*pos] - '0';
         (*pos)++;
+        // if a number is a two-digit number
         if (line[*pos] != ')' && line[*pos] != ' ' && line[*pos] != '\0') {
             tree->candy = tree->candy * 10 + line[*pos] - '0';
             (*pos)++;
